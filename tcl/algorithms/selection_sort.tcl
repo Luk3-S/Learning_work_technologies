@@ -6,7 +6,7 @@ proc selection_sort {unsorted_list length} {
                 set min_index $j  
             }
         }
-        set tmp [lindex $unsorted_list $i] ;# temporary variable to hold unsorted_list[i] pre-replacement
+        set tmp [lindex $unsorted_list $i] ;# Temporary variable to hold unsorted_list[i] pre-replacement
         set unsorted_list [lset unsorted_list  $i [lindex $unsorted_list $min_index]]
         set unsorted_list [lset unsorted_list $min_index $tmp]
     }
