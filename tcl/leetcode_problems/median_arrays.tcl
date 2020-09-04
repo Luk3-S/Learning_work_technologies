@@ -13,12 +13,6 @@ proc median_value {l1 l2} {
     } else {
         set midpoint2 [expr $total_length /2]
         set midpoint1 [expr $midpoint2 - 1]
-        if {[expr $midpoint2 == [llength $l1] ]} {
-            set med1  [lindex $l2 0]
-            set med2  [lindex $l1 end ]
-            set median  [expr ($med1 + $med2) / 2.0]
-            return $median
-        } else {
             if {[expr [llength $l1 ] > [llength $l2]]} {
                 set ll $l1
                 set sl $l2
@@ -34,8 +28,4 @@ proc median_value {l1 l2} {
             return $median
         }
     }
-
-    
-}
-
-puts "Median value is: [median_value {1 3} {2}]"
+puts "Median value is: [median_value {1} {2 3 4}]"
