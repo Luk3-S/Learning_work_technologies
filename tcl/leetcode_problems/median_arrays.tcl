@@ -12,11 +12,9 @@ proc median_value {l1 l2} {
     } else { ;# even combined list size
             if {[expr [llength $l1 ] > [llength $l2]]} { ;# if l1 > l2 in size and total length is equal, midpoints will be l1[end] & l1[end - 1]
                 set median [expr {([lindex $l1 end] + [lindex $l1 end-1])} / 2.0]
-            } 
-            if {[expr [llength $l1] == [llength $l2]]} { ;# if l1 == l2 in size, midpoints are l1[end] & l2[0]
+            } elseif {[expr [llength $l1] == [llength $l2]]} { ;# if l1 == l2 in size, midpoints are l1[end] & l2[0]
                 set median [expr ([lindex $l1 end] + [lindex $l2 0]) / 2.0]
-            } 
-            if {[expr [llength $l1] < [llength $l2]]} { ;# l2 > l1 in size, midpoints are l2[0] & l2[1]
+            } else { ;# l2 > l1 in size, midpoints are l2[0] & l2[1]
                 set median  [expr {([lindex $l2 0] + [lindex $l2 1])} / 2.0]
             } 
         }
